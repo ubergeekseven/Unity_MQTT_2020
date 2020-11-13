@@ -1,4 +1,8 @@
 # MichaelDot forked this to do this stuff....
+An edited version of this project https://github.com/Hantoo/Unity_MQTT 
+
+# I forked originally and changed it too much to be able to push it to the project. This one does different things but has the same capabilites.
+
 I have forked the original repository with the changes outlined below. They forked it from the mentioned below as well. Unity no longer allows you to generate the object with "new". I instead created a public gameobject that would have the script on it. Then you would drag the gameobject into the editor spot so that the script can access the scritps on the gameobject. All scripts are on the same object so far but, this would allow you to also add the scripts to different objects and then reference them on an object that never disables and allows you to have all of your scritps in one location referencing objects as needed.
 
 # Plans for this in the near future
@@ -15,6 +19,8 @@ I will add scenes and examples as I improve on this library. So far I can receiv
 Mqtttest
 
 MQTTRouting
+
+![Inspector](ReadMe_Assets/unityScreenMQTT.png "Inspector Overview")
 
 I used an empty game object to house these scripts. I have a commented area within the routing script that would allow updating a text mesh objects text with the received string.
 The test script has exposed variables for:
@@ -35,42 +41,3 @@ I created several scenes with different virtual projection screen resolutions to
 i have not added all of the assets to this that are in my game because there are proprietery things within it. I need to clean and update after I get ahead.
 
 
-# Unity_MQTT
-This is an edited version of [Unity3d_MQTT](https://github.com/vovacooper/Unity3d_MQTT) by vovacooper.  
-  
-I have made the variables more accessable to the user along with adding a routing script to keep the routing seperate from the main MQTT scripts.
-
-## Usage
-
-To use this script, first set the Client Settings 'Ip Address' to the address of your MQTT broker. The brokers port should be put in Broker_port feild. Ensure that a MQTT broker such as Mosquitto is running otherwise you'll get errors upon runtime. Ensure that you ensure the correct topics that you wish to subscribe too. 
-All messages are routed throught the MQTT Routing script. Use this to cleanly breakdown the MQTT Topics and then prase the topic messages into usable data which you can then pass on to other functions or classes.
-
-E.g.   
-
-     if (MqttMessage.Topic.Contains("Global/Temperature")){     
-     
-          TemperatureControl TempCtrl = new TemperatureControl ();     
-     
-          int value = int.Parse(System.Text.Encoding.UTF8.GetString(MqttMessage.Message));   
-     
-          TempCtrl .setTemp(value );    
-     
-     }     
-
-## Detail
-  
-![UI](ReadMe_Assets/MQTT_Image1.PNG "User Interface")
-
-#### IP Address
-IP of the broker.
-
-#### Broker_Port
-Port of the broker
-
-#### Topic Prefix
-Prefix that is added to all topics. E.g. in the example above, the topics subscriped to are: OC/TrackingPeople/IDs/#
-
-#### Topics
-This is a list of all the topics you wish to subscribe too. Use # as a wildcard
-
-![MQTT](ReadMe_Assets/Capture7.PNG "MQTT Levels")
