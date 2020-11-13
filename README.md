@@ -10,10 +10,12 @@ send updates for clients to read and print out 3A) Once a string is sent, then t
 I will add scenes and examples as I improve on this library. So far I can receive info and do whatever with whtat comes in. Need to create editor scripts that are mor einformative and not require any coding on the original scripts after the fact. All from within the editor.
 
 # How to use this in a project
+
 2 visible scripts are needed:
 Mqtttest
+
 MQTTRouting
-![UI](ReadMe_Assets/unityScreenMQTT.PNG "Inspector Overview")
+
 I used an empty game object to house these scripts. I have a commented area within the routing script that would allow updating a text mesh objects text with the received string.
 The test script has exposed variables for:
 IP address
