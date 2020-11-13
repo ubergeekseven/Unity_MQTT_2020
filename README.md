@@ -13,7 +13,7 @@ I will add scenes and examples as I improve on this library. So far I can receiv
 2 visible scripts are needed:
 Mqtttest
 MQTTRouting
-
+![UI](ReadMe_Assets/unityScreenMQTT.PNG "Inspector Overview")
 I used an empty game object to house these scripts. I have a commented area within the routing script that would allow updating a text mesh objects text with the received string.
 The test script has exposed variables for:
 IP address
